@@ -1,0 +1,10 @@
+<div (click)="onToggle()"
+	class="theme-toggle">
+	<div class="theme-toggle__label">
+		<i [class]="isDark ? 'fas fa-sun' : 'fas fa-moon'"></i>
+		<span>
+			{{ isDark ? 'Light Mode' : 'Dark Mode' }}
+		</span>
+	</div>
+	<div class="theme-toggle__switch"></div>
+</div>

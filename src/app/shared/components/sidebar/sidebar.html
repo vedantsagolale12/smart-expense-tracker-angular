@@ -1,0 +1,100 @@
+<!-- Font Awesome 6 - Free version -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Sidebar Toggle Button -->
+<button [attr.aria-expanded]="isOpen"
+	(click)="isOpen = !isOpen"
+	class="sidebar-toggle">
+	<i class="fas fa-bars"></i>
+</button>
+
+<!-- Sidebar Overlay -->
+<div [class.sidebar-overlay--active]="isOpen"
+	(click)="isOpen = false"
+	class="sidebar-overlay"></div>
+
+<!-- Sidebar -->
+<aside [class.sidebar--open]="isOpen"
+	[class.sidebar--collapsed]="!isOpen"
+	class="sidebar">
+
+	<!-- Sidebar Content Wrapper -->
+	<div class="sidebar__content">
+		<!-- Sidebar Header -->
+		<header class="sidebar__header">
+			<div class="sidebar__logo">
+				<span class="sidebar__logo-text">
+					FINE<span class="sidebar__logo-highlight">bank</span>.IO
+				</span>
+			</div>
+		</header>
+
+		<!-- Theme Toggle -->
+		<div (click)="toggleTheme()" class="theme-toggle">
+			<div class="theme-toggle__label">
+				<i [class]="getCurrentTheme() === 'dark' ? 'fas fa-sun' : 'fas fa-moon'"></i>
+				<span>{{ getCurrentTheme() === 'dark' ? 'Light Mode' : 'Dark Mode' }}</span>
+			</div>
+			<div class="theme-toggle__switch"></div>
+		</div>
+
+		<!-- Navigation -->
+		<nav class="sidebar__nav">
+			<ul class="nav">
+				<li *ngFor="let item of navigationItems" class="nav__item">
+					<a [routerLink]="item.route"
+						[attr.aria-label]="item.label"
+						class="nav__link"
+						routerLinkActive="nav__link--active">
+						<span class="nav__icon">
+							<i [class]="item.icon" aria-hidden="true"></i>
+						</span>
+						<span class="nav__text">{{ item.label }}</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<!-- Divider -->
+		<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 1rem 1.5rem;" />
+
+		<!-- Account Section -->
+		<ul class="nav">
+			<li class="nav__item">
+				<a routerLink="/profile"
+					class="nav__link"
+					routerLinkActive="nav__link--active"
+					aria-label="Profile">
+					<span class="nav__icon">
+						<i class="fas fa-user"></i>
+					</span>
+					<span class="nav__text">Profile</span>
+				</a>
+			</li>
+			<li class="nav__item">
+				<a routerLink="/settings"
+					class="nav__link"
+					routerLinkActive="nav__link--active"
+					aria-label="Settings">
+					<span class="nav__icon">
+						<i class="fas fa-cog"></i>
+					</span>
+					<span class="nav__text">Settings</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<!-- Footer -->
+	<footer class="sidebar__footer">
+		<button (click)="onLogout()"
+			class="nav__link"
+			type="button"
+			aria-label="Logout">
+			<span class="nav__icon">
+				<i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+			</span>
+			<span class="nav__text">Logout</span>
+		</button>
+	</footer>
+</aside>
