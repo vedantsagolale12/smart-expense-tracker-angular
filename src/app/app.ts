@@ -7,7 +7,7 @@ import { Theme } from './core/services/theme';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Sidebar],
+  imports: [RouterOutlet, Sidebar, Navbar],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

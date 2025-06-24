@@ -1,1 +1,24 @@
-<p>navbar works!</p>
+<div class="navbar">
+	<div class="navbar__left">
+		<h2>Hello User</h2>
+		<span class="navbar__date">
+			<i class="fas fa-angle-double-right"></i>
+			{{ getFormattedDate() }}
+		</span>
+	</div>
+
+
+	<div class="navbar__right">
+		<div class="navbar__icon-wrapper">
+			<i class="fas fa-bell"></i>
+			<span class="notification-dot"></span>
+		</div>
+
+
+		<div class="navbar__search">
+			<input type="text"
+				placeholder="Search here">
+			<i class="fas fa-search"></i>
+		</div>
+	</div>
+</div>
