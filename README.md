@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SmartExpenseTrackerAngular
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.2.
@@ -57,3 +58,11 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# smart-expense-tracker-angular
+expense tracking system in angular with enabling AI features .
+
+
+# work in progress!
+
+>>>>>>> 46fad438f12be26784a0816cc0d11ab70ad0c65e
