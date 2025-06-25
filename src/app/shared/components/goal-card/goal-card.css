@@ -1,0 +1,226 @@
+/* goals-card.component.css */
+.goals-card {
+  background: var(--bg-primary, #ffffff);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color, #e5e7eb);
+  transition: all 0.3s ease;
+  height: fit-content;
+}
+
+.goals-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.goals-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.goals-card__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary, #6b7280);
+  margin: 0;
+}
+
+.view-all-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary, #6b7280);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+.view-all-btn:hover {
+  color: var(--text-primary, #111827);
+  background: var(--bg-secondary, #f9fafb);
+}
+
+.goals-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.goal-amount {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.goal-currency {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+.goal-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary, #111827);
+  line-height: 1;
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary, #6b7280);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  margin-left: auto;
+}
+
+.edit-btn:hover {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.goal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.goal-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.goal-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.target-icon {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.achieved-icon {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.goal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.goal-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #6b7280);
+  font-weight: 500;
+}
+
+.goal-amount-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+.progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #6b7280);
+  font-weight: 500;
+}
+
+.progress-percentage {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #10b981;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--bg-secondary, #f3f4f6);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+  border-radius: 4px;
+  transition: width 0.8s ease;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Dark theme support */
+[data-theme="dark"] .goals-card {
+  background: var(--bg-primary, #1f2937);
+  border-color: var(--border-color, #374151);
+}
+
+[data-theme="dark"] .goals-card__title {
+  color: var(--text-secondary, #d1d5db);
+}
+
+[data-theme="dark"] .view-all-btn {
+  color: var(--text-secondary, #d1d5db);
+}
+
+[data-theme="dark"] .view-all-btn:hover {
+  color: var(--text-primary, #f9fafb);
+  background: var(--bg-secondary, #374151);
+}
+
+[data-theme="dark"] .goal-currency,
+[data-theme="dark"] .goal-value,
+[data-theme="dark"] .goal-amount-text {
+  color: var(--text-primary, #f9fafb);
+}
+
+[data-theme="dark"] .progress-bar {
+  background: var(--bg-secondary, #374151);
+}

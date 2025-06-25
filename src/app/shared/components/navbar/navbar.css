@@ -10,12 +10,15 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  border-bottom: 1px solid var(--border-color);
+ 
   position: sticky;
   top: 0;
-  z-index: 100;
-  background-color: var(--bg-primary);
+  z-index: 99; /* Still lower than sidebar */
+  
   padding: 1rem;
+  /* Add this to respect the flexbox layout */
+  left: 0;
+  right: 0;
 }
 
 
@@ -23,12 +26,12 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0;
-  color: var(--text-primary);
+ 
 }
 
 .navbar__date {
   font-size: 0.875rem;
-  color: var(--text-secondary);
+ 
   margin-left: 1rem;
 }
 
@@ -41,7 +44,7 @@
 .navbar__icon-wrapper {
   position: relative;
   font-size: 1.25rem;
-  color: var(--text-primary);
+ 
   cursor: pointer;
 }
 
@@ -58,8 +61,7 @@
 .navbar__search {
   display: flex;
   align-items: center;
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
+  
   border-radius: 8px;
   padding: 0.5rem 0.75rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -69,7 +71,7 @@
   border: none;
   outline: none;
   font-size: 0.875rem;
-  color: var(--text-primary);
+  
   background: transparent;
   font-family: inherit;
   width: 140px;
@@ -77,5 +79,17 @@
 
 .navbar__search i {
   margin-left: 0.5rem;
-  color: var(--text-secondary);
+ 
+}
+
+.navbar__left {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Adds spacing between username and date */
+}
+
+.navbar__date {
+  font-size: 0.875rem;
+  
+  font-weight: 400;
 }

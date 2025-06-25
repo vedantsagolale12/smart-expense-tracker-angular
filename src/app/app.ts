@@ -4,10 +4,13 @@ import { Navbar } from './shared/components/navbar/navbar';
 import { Sidebar } from './shared/components/sidebar/sidebar';
 import { AppIcons } from './shared/constants/icon_mapping';
 import { Theme } from './core/services/theme';
+import { TotalBalanceCard } from "./shared/components/total-balance-card/total-balance-card";
+import { GoalCard } from "./shared/components/goal-card/goal-card";
+import { UpcomingbillCard } from "./shared/components/upcomingbill-card/upcomingbill-card";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Sidebar, Navbar],
+  imports: [RouterOutlet, Sidebar, Navbar, TotalBalanceCard, GoalCard, UpcomingbillCard],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

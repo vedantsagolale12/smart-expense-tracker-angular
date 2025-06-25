@@ -3,7 +3,8 @@
 @tailwind utilities; */
 
 /* Reset default styles */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -14,17 +15,17 @@ html, body {
    =========================== */
 
 /* Light Theme */
-body[data-theme='light'] {
+body[data-theme="light"] {
   --bg-color: #ffffff;
   --text-color: #111111;
-  --sidebar-bg: #f0f0f0;
-  --navbar-bg: #ffffff;
+  --sidebar-bg: #afd6ff;
+  --navbar-bg: #f7fbff;
   --card-bg: #f9f9f9;
   --border-color: #e0e0e0;
 }
 
 /* Dark Theme */
-body[data-theme='dark'] {
+body[data-theme="dark"] {
   --bg-color: #121212;
   --text-color: #f4f4f4;
   --sidebar-bg: #1e1e1e;
@@ -46,37 +47,17 @@ body {
 .sidebar {
   background-color: var(--sidebar-bg);
   transition: background-color 0.3s ease;
-  
 }
 
 .navbar {
   background-color: var(--navbar-bg);
   transition: background-color 0.3s ease;
+  border-bottom: #111111 0.5px solid;
 }
-
+/* 
 .card {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   transition: background-color 0.3s ease, border-color 0.3s ease;
-}
+} */
 
-.layout-wrapper {
-  display: flex;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
-
-app-sidebar {
-  width: 280px; 
-  flex-shrink: 0;
-  height: 100vh;
-}
-
-.main-layout {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-}

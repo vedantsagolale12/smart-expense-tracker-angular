@@ -1,17 +1,20 @@
-/* Layout Wrapper to hold sidebar + main content */
 .layout-wrapper {
   display: flex;
   height: 100vh;
   width: 100%;
   overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 /* Sidebar stays on the left */
 app-sidebar {
-  width: 280px; /* adjust for collapsed */
+  width: 280px;
   height: 100vh;
   flex-shrink: 0;
   display: block;
+  position: relative;
+  z-index: 1000;
 }
 
 /* Main layout (navbar + content) */
@@ -21,12 +24,34 @@ app-sidebar {
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-/* Make sure navbar has no margin/padding issues */
+/* Make sure navbar doesn't overlap */
 app-navbar {
   flex-shrink: 0;
   display: block;
+  position: relative;
+  z-index: 999;
+  width: 100%;
+}
+
+/* Container to vertically align cards */
+.card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem;
+  overflow-y: auto;
+  height: 100%;
+}
+
+app-total-balance-card,
+app-goal-card,
+app-upcomingbill-card {
+  display: block;
+  width: 100%;
 }
 
 /* Ensure router-outlet fills rest */

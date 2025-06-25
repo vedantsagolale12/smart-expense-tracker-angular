@@ -1,0 +1,52 @@
+ <div class="bills-card">
+      <div class="bills-card__header">
+        <h3 class="bills-card__title">{{ title }}</h3>
+        <button class="view-all-btn" *ngIf="data.hasViewAll" (click)="onViewAll()">
+          View All
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+      
+      <div class="bills-card__content">
+        <div class="bills-list" *ngIf="data.bills.length > 0; else noBills">
+          <div 
+            class="bill-item" 
+            *ngFor="let bill of data.bills; trackBy: trackByBillId"
+            [class.bill-item--overdue]="bill.isOverdue"
+            (click)="onBillClick(bill)"
+          >
+            <div class="bill-date">
+              <div class="date-container">
+                <span class="date-month"> January</span>
+                <span class="date-day">{{ '01' }}</span>
+              </div>
+            </div>
+            
+            <div class="bill-info">
+              <div class="bill-company">
+                <div class="company-logo" [ngStyle]="{'background-color': bill.color || '#6b7280'}">
+                  <img *ngIf="bill.logo" [src]="bill.logo" [alt]="bill.company">
+                  <span *ngIf="!bill.logo">{{ getCompanyInitial(bill.company) }}</span>
+                </div>
+                <div class="company-details">
+                  <span class="company-name">{{ bill.company }}</span>
+                  <span class="bill-type">{{ bill.type }}</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bill-amount">
+              <span class="amount-currency">{{ bill.currency }}</span>
+              <span class="amount-value">{{ bill.amount | number:'1.0-0' }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <ng-template #noBills>
+          <div class="no-bills">
+            <i class="fas fa-calendar-check"></i>
+            <p>No upcoming bills</p>
+          </div>
+        </ng-template>
+      </div>
+    </div>

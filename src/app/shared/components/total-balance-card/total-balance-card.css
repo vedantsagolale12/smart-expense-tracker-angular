@@ -1,0 +1,170 @@
+/* total-balance-card.component.css */
+.balance-card {
+  background: var(--bg-primary, #ffffff);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color, #e5e7eb);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.balance-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.balance-card__header {
+  margin-bottom: 1.5rem;
+}
+
+.balance-card__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary, #6b7280);
+  margin: 0 0 0.25rem 0;
+}
+
+.balance-card__subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #9ca3af);
+}
+
+.balance-card__amount {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.balance-card__currency {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+.balance-card__value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary, #111827);
+  line-height: 1;
+}
+
+.balance-card__account {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.balance-card__account::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.account-info {
+  color: white;
+}
+
+.account-info__type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.account-label {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.account-type {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.account-info__details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account-number {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.account-balance {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.account-balance .currency {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.account-balance .amount {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.check-icon {
+  color: #10b981;
+  background: white;
+  border-radius: 50%;
+  padding: 2px;
+  font-size: 0.75rem;
+}
+
+.balance-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: var(--text-secondary, #6b7280);
+  transition: color 0.2s ease;
+}
+
+.balance-card__footer:hover {
+  color: var(--text-primary, #111827);
+}
+
+.next-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.next-icon {
+  font-size: 0.75rem;
+}
+
+/* Dark theme support */
+[data-theme="dark"] .balance-card {
+  background: var(--bg-primary, #1f2937);
+  border-color: var(--border-color, #374151);
+}
+
+[data-theme="dark"] .balance-card__title,
+[data-theme="dark"] .balance-card__currency,
+[data-theme="dark"] .balance-card__value {
+  color: var(--text-primary, #f9fafb);
+}
+
+[data-theme="dark"] .balance-card__subtitle {
+  color: var(--text-secondary, #d1d5db);
+}

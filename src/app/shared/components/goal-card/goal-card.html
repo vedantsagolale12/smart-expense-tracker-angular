@@ -1,0 +1,55 @@
+ <div class="goals-card">
+      <div class="goals-card__header">
+        <h3 class="goals-card__title">{{ title }}</h3>
+        <button class="view-all-btn" *ngIf="showViewAll" (click)="onViewAll()">
+          View All
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+      
+      <div class="goals-card__content">
+        <div class="goal-amount">
+          <span class="goal-currency">{{ data.currency }}</span>
+          <span class="goal-value">{{ data.targetAmount | number:'1.0-0' }}</span>
+          <button class="edit-btn" *ngIf="data.hasEditOption" (click)="onEdit()">
+            <i class="fas fa-edit"></i>
+          </button>
+        </div>
+        
+        <div class="goal-details">
+          <div class="goal-item">
+            <div class="goal-icon target-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <div class="goal-info">
+              <span class="goal-label">{{ data.targetLabel }}</span>
+              <span class="goal-amount-text">
+                {{ data.currency }}{{ data.targetAmount | number:'1.0-0' }}
+              </span>
+            </div>
+          </div>
+          
+          <div class="goal-item">
+            <div class="goal-icon achieved-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="goal-info">
+              <span class="goal-label">{{ data.achievedLabel }}</span>
+              <span class="goal-amount-text">
+                {{ data.currency }}{{ data.achievedAmount | number:'1.0-0' }}
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="progress-section">
+          <div class="progress-header">
+            <span class="progress-label">{{ data.progressLabel }}</span>
+            <span class="progress-percentage">{{ data.progress }}%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" [style.width.%]="data.progress"></div>
+          </div>
+        </div>
+      </div>
+    </div>
